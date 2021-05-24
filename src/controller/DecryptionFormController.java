@@ -4,7 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
-import util.DEP7Crypto;
+import lk.ijse.crypto.DEP7Crypto;
+//import util.DEP7Crypto;
 
 public class DecryptionFormController {
 
@@ -48,6 +49,7 @@ public class DecryptionFormController {
 
         }
     }
+
 
 
 
