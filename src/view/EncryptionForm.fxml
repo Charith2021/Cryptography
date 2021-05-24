@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EncryptionFormController">
+   <children>
+      <Label layoutX="215.0" layoutY="14.0" text="Encryption">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtText" layoutX="202.0" layoutY="93.0" promptText="Enter your text" />
+      <TextField fx:id="txtKey" layoutX="202.0" layoutY="155.0" promptText="Enter your key" />
+      <Button layoutX="257.0" layoutY="215.0" mnemonicParsing="false" onAction="#btnEncrypt_OnAction" text="Encrypt" />
+      <TextField fx:id="txtCypher" editable="false" layoutX="165.0" layoutY="312.0" prefHeight="26.0" prefWidth="270.0" promptText="Your cypher text will be displayed here" />
+   </children>
+</AnchorPane>
