@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
+import util.DEP7Crypto;
 
 public class EncryptionFormController {
     public TextField txtText;
@@ -24,19 +25,7 @@ public class EncryptionFormController {
             txtKey.requestFocus();
             return;
         }
-        text += key;
-        String reversedText = "";
-        for (int i = text.length() - 1; i >= 0; i--) {        //the reversed text comes from here
-            reversedText += text.charAt(i);
-        }
 
-        String cipherText = "";
-        for (int i = 0; i <reversedText.length(); i++) {
-            int code=reversedText.charAt(i);    //reversedText.charAt(i) --meken api reverse kara ganipu text eke eka akura gane aragena int ekakata dagannawa
-            code+=10;                      //udadi int ekak athulata da gatthe nathnam 10k ekathu karaganna baruwa yanawa
-            char newChar=(char) code;
-            cipherText+=newChar;
-        }
-        txtCypher.setText(cipherText);
+        txtCypher.setText(DEP7Crypto.encrypt(text,key));
     }
 }

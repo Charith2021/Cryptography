@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
+import util.DEP7Crypto;
 
 public class DecryptionFormController {
 
@@ -42,21 +43,7 @@ public class DecryptionFormController {
             }
             txtDText.setText(cipherText); */
 
-             String reversedText="";
-            for (int i = 0; i < cypherText.length(); i++) {
-                int code=cypherText.charAt(i);   //cypher text eke tiyana eka akura gane gannawa
-                code-=10;   //eken 10 k adu karanawa.kalin ekathu karapu 10
-                char originalChar=(char) code;
-                reversedText+=originalChar;
-            }
-
-            String originalText="";
-            for (int i =reversedText.length()-1; i >=0 ; i--) {
-                originalText+=reversedText.charAt(i);
-
-            }
-            originalText=originalText.substring(0,originalText.length()-key.length()); //original text eken key eka ayn kranawa nathnam key ekath ekka output eka waddinne
-            txtDText.setText(originalText);
+             txtDText.setText(DEP7Crypto.decrypt(cypherText,key));
 
 
         }
